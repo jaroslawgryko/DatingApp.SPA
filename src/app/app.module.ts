@@ -1,3 +1,4 @@
+import { AlertifyService } from './_services/alertify.service';
 import { AuthService } from './_services/auth.service';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -24,7 +25,8 @@ import { RegisterComponent } from './register/register.component';
     FormsModule
   ],
   providers: [
-    AuthService
+    AuthService,
+    AlertifyService
   ],
   bootstrap: [AppComponent]
 })
