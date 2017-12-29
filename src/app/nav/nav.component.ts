@@ -25,15 +25,16 @@ export class NavComponent implements OnInit {
     });
   }
 
-  logout(){
+  logout() {
     this.authService.userToken = null;
     localStorage.removeItem('token');
     this.alertify.message('logged out');
   }
 
   loggedIn() {
-    const token = localStorage.getItem('token');
-    return !!token;
+    // const token = localStorage.getItem('token');
+    // return !!token;
+    return this.authService.loggedIn();
   }
 
 }
