@@ -1,3 +1,5 @@
+import { MemberEditResolver } from './_resolvers/member-edit.resolver';
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { FormsModule } from '@angular/forms';
@@ -35,7 +37,8 @@ import { MemberListResolver } from './_resolvers/member-list.resolver';
     ListsComponent,
     MessagesComponent,
     MemberCardComponent,
-    MemberDetailComponent
+    MemberDetailComponent,
+    MemberEditComponent
 ],
   imports: [
     BrowserModule,
@@ -53,7 +56,8 @@ import { MemberListResolver } from './_resolvers/member-list.resolver';
     AuthGuard,
     UserService,
     MemberDetailResolver,
-    MemberListResolver
+    MemberListResolver,
+    MemberEditResolver
   ],
   bootstrap: [AppComponent]
 })
