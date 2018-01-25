@@ -1,10 +1,10 @@
 import { AuthService } from './../_services/auth.service';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
 import { AlertifyService } from './../_services/alertify.service';
 import { UserService } from './../_services/user.service';
-import { Resolve, Router, RouterStateSnapshot, ActivatedRouteSnapshot } from "@angular/router";
-import { User } from "../_models/User";
-import { Injectable } from "@angular/core";
+import { Resolve, Router, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
+import { User } from '../_models/User';
+import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/catch';
 
 @Injectable()
