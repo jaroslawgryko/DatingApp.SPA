@@ -1,3 +1,4 @@
+import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
 import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
@@ -14,7 +15,7 @@ import { UserService } from './_services/user.service';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { AlertifyService } from './_services/alertify.service';
-import { BsDropdownModule, TabsModule } from 'ngx-bootstrap';
+
 import { NgxGalleryModule } from 'ngx-gallery';
 import { MemberListComponent } from './members/member-list/member-list.component';
 import { ListsComponent } from './lists/lists.component';
@@ -29,10 +30,11 @@ import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import { FileUploadModule } from 'ng2-file-upload';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-import {TimeAgoPipe} from 'time-ago-pipe';
-import { PaginationModule } from 'ngx-bootstrap/pagination';
-import { ButtonsModule } from 'ngx-bootstrap/buttons/buttons.module';
+import { TimeAgoPipe } from 'time-ago-pipe';
+
+import { ButtonsModule, PaginationModule, TabsModule, BsDropdownModule } from 'ngx-bootstrap';
 import { ListsResolver } from './_resolvers/lists.resolver';
+import { MessagesResolver } from './_resolvers/message.resolver';
 
 
 @NgModule({
@@ -48,7 +50,8 @@ import { ListsResolver } from './_resolvers/lists.resolver';
     MemberDetailComponent,
     MemberEditComponent,
     PhotoEditorComponent,
-    TimeAgoPipe
+    TimeAgoPipe,
+    MemberMessagesComponent
 ],
   imports: [
     BrowserModule,
@@ -74,7 +77,8 @@ import { ListsResolver } from './_resolvers/lists.resolver';
     MemberDetailResolver,
     MemberListResolver,
     MemberEditResolver,
-    ListsResolver
+    ListsResolver,
+    MessagesResolver
   ],
   bootstrap: [AppComponent]
 })
