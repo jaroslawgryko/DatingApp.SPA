@@ -129,4 +129,11 @@ constructor(private authHttp: AuthHttp) { }
             return response.json();
           }).catch(this.handleError);
       }
+
+      sendMessage(id: number, message: Message) {
+        return this.authHttp.post(this.baseUrl + 'users/' + id + '/messages', message)
+          .map((respons: Response) => {
+            return respons.json();
+          }).catch(this.handleError);
+      }
 }
