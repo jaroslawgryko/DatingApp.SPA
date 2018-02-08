@@ -141,4 +141,9 @@ constructor(private authHttp: AuthHttp) { }
         return this.authHttp.post(this.baseUrl + 'users/' + userId + '/messages/' + id, {})
           .map(response => {}).catch(this.handleError);
       }
+
+      markAsRead(userId: number, messageId: number) {
+        return this.authHttp.post(this.baseUrl + 'users/' + userId + '/messages/' + messageId + '/read', {})
+          .subscribe();
+      }
 }
