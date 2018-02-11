@@ -36,6 +36,9 @@ import { ButtonsModule, PaginationModule, TabsModule, BsDropdownModule } from 'n
 import { ListsResolver } from './_resolvers/lists.resolver';
 import { MessagesResolver } from './_resolvers/message.resolver';
 
+import { JwtModule } from '@auth0/angular-jwt';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -66,7 +69,16 @@ import { MessagesResolver } from './_resolvers/message.resolver';
     FileUploadModule,
     BsDatepickerModule.forRoot(),
     PaginationModule.forRoot(),
-    ButtonsModule.forRoot()
+    ButtonsModule.forRoot(),
+    HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => {
+          return localStorage.getItem('token');
+        },
+        whitelistedDomains: ['localhost:5000']
+      }
+    })
   ],
   providers: [
     AuthService,
